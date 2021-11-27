@@ -1,6 +1,6 @@
 # Tic Tac Toe - The Odin Project Series
 
-## This is an implementation of the Tic Tac Toe project in the [Javascript series](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript) from the [Full Stack Javascript Path](https://www.theodinproject.com/paths/full-stack-javascript) in the [The Odin Project](https://www.theodinproject.com/)
+## This is an implementation of the [Tic Tac Toe project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/tic-tac-toe) in the [Javascript series](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript) from the [Full Stack Javascript Path](https://www.theodinproject.com/paths/full-stack-javascript) in the [The Odin Project](https://www.theodinproject.com/)
 
 ---
 
