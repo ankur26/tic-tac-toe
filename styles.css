@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+
+}
+header{
+    text-align: center;
+    /* font-size: xx-large; */
+}
+main{
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+section{
+    margin: 25px 0;
+}
+
+.grid-row{
+    display: flex;
+}
+.grid-square{
+    /* display: inline-block; */
+    border : 1px solid black;
+    padding: 50px;
+    font-size: xx-large;
+}
+.unfilled{
+    padding: 68.5px 61.555px;
+}

@@ -12,6 +12,30 @@
         <h1>Tic-Tac-Toe</h1>
     </header>
     <main>
+        <section id="game-board">
+            <div class="grid-row">
+                <div class="grid-square unfilled" data-grid="1"></div>
+                <div class="grid-square unfilled" data-grid="2"></div>
+                <div class="grid-square unfilled" data-grid="3"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-square unfilled" data-grid="4"></div>
+                <div class="grid-square unfilled" data-grid="5"></div>
+                <div class="grid-square unfilled" data-grid="6"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-square unfilled" data-grid="7"></div>
+                <div class="grid-square unfilled" data-grid="8"></div>
+                <div class="grid-square unfilled" data-grid="9"></div>
+            </div>
+        </section>
+        <section id="player-prompt">
+            <div class="current-player">Current player is X</div>
+            <div class="buttons">
+                <button id="reset">Reset game</button>
+            </div>
+        </section>
+        <section id="winner-prompt" ></section>
     </main>
     <script src="index.js"></script>
 </body>

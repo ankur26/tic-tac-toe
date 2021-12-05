@@ -71,3 +71,34 @@ const GameBoard = ( () => {
 
 
 // console.log(GameBoard());
+const displayController = ( ()=>{
+    const gameBoardDisplay = document.getElementById("game-board");
+    const gameGrids = document.querySelectorAll(".grid-square");
+    const resetButton = document.getElementById("reset");
+    const reset = () => {
+        console.log("In reset");
+        gameGrids.forEach((gameGrid,index)=>{
+            if(gameGrid.textContent){
+                gameGrid.classList.add("unfilled");
+                gameGrid.addEventListener('click',playTurn);
+            }
+        })
+    };
+    let current = true;
+    const currentPlayer = () => current ? "X" : "O";
+    const flipPlayer = () => current = !current ;
+
+    function playTurn(){
+        this.textContent = currentPlayer();
+        this.classList.remove("unfilled");
+        flipPlayer();
+        this.removeEventListener('click',playTurn)
+        //updategrid will be here
+        //check winner here to disable the buttons and only reset will be present then .
+    }
+    resetButton.addEventListener('click',reset);
+
+    // return {currentPlayer,flipPlayer}
+} )();
+
+const display = displayController;
