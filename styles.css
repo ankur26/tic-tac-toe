@@ -29,3 +29,6 @@ section{
 .unfilled{
     padding: 68.5px 61.555px;
 }
+.none{
+    display:none;
+}
