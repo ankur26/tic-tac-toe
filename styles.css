@@ -1,6 +1,10 @@
+:root{
+    font-size: 16px;
+    font-family: 'Major Mono Display', monospace;
+}
 *{
     box-sizing: border-box;
-
+    font-family: 'Open Sans', sans-serif;
 }
 header{
     text-align: center;
@@ -12,6 +16,7 @@ main{
     align-items: center;
     flex-direction: column;
     text-align: center;
+    font-size:2rem;
 }
 section{
     margin: 25px 0;
@@ -23,11 +28,17 @@ section{
 .grid-square{
     /* display: inline-block; */
     border : 1px solid black;
-    padding: 50px;
-    font-size: xx-large;
+    font-size: 64px;
+    font-weight: 400;
+}
+.grid-square.X{
+    padding:14px 28.656px;
+}
+.grid-square.O{
+    padding:14px 25.1095px;
 }
 .unfilled{
-    padding: 68.5px 61.555px;
+    padding: 50px;
 }
 .none{
     display:none;

@@ -91,11 +91,12 @@ const displayController = (() => {
         console.log("In reset");
         board.refresh();
         gameGrids.forEach((gameGrid, index) => {
-            if (gameGrid.textContent !== "") {
-                gameGrid.textContent = "";
-                gameGrid.classList.add("unfilled");
-                gameGrid.addEventListener('click', playTurn);
-            }
+            gameGrid.textContent = "";
+            gameGrid.classList.add("unfilled");
+            gameGrid.classList.remove("X");
+            gameGrid.classList.remove("O");
+            gameGrid.addEventListener('click', playTurn);
+
         });
         player.classList.remove("none");
         winnerText.classList.add("none");
@@ -105,7 +106,7 @@ const displayController = (() => {
     const flipPlayer = () => current = !current;
     const roundover = () => board.roundOver();
     const disableButtonsAndShowWinner = () => {
-        gameGrids.forEach(gameGrid => gameGrid.removeEventListener('click',playTurn))
+        gameGrids.forEach(gameGrid => gameGrid.removeEventListener('click', playTurn))
         player.classList.add("none");
         winnerText.textContent = board.Winner() === "draw" ? "It's a Draw !" : `${board.Winner()} wins this round !`;
         winnerText.classList.remove("none");
@@ -113,6 +114,7 @@ const displayController = (() => {
     function playTurn() {
         this.textContent = currentPlayer();
         this.classList.remove("unfilled");
+        this.classList.add(currentPlayer());
         this.removeEventListener('click', playTurn);
         board.updateGrid(this.dataset.grid, currentPlayer());
         if (!roundover()) {
