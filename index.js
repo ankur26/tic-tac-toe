@@ -136,7 +136,7 @@ const displayController = (() => {
     // board.refresh();
     initialize();
     // return {currentPlayer,flipPlayer}
-    return { board }
+    // return { board }
 })();
 
 const display = displayController;
