@@ -26,7 +26,7 @@ const GameBoard = (() => {
             (string.includes("6") && string.includes("7") && string.includes("8")) ||
             (string.includes("0") && string.includes("3") && string.includes("6")) ||
             (string.includes("1") && string.includes("4") && string.includes("7")) ||
-            (string.includes("2") && string.includes("6") && string.includes("8")) ||
+            (string.includes("2") && string.includes("5") && string.includes("8")) ||
             (string.includes("0") && string.includes("4") && string.includes("8")) ||
             (string.includes("2") && string.includes("4") && string.includes("6"))
         ) {
@@ -80,6 +80,11 @@ const displayController = (() => {
     const player = document.querySelector(".current-player");
     const winnerText = document.getElementById("winner-prompt");
     // console.log(player);
+    let current = true;
+    const currentPlayer = () => current ? "X" : "O";
+    const flipPlayer = () => current = !current;
+    const roundover = () => board.roundOver();
+
     const initialize = () => {
         board.refresh();
         gameGrids.forEach((gameGrid, index) => {
@@ -89,6 +94,7 @@ const displayController = (() => {
     }
     const reset = () => {
         console.log("In reset");
+        current = true;
         board.refresh();
         gameGrids.forEach((gameGrid, index) => {
             gameGrid.textContent = "";
@@ -99,12 +105,10 @@ const displayController = (() => {
 
         });
         player.classList.remove("none");
+        player.textContent = "Player X's turn";
         winnerText.classList.add("none");
     };
-    let current = true;
-    const currentPlayer = () => current ? "X" : "O";
-    const flipPlayer = () => current = !current;
-    const roundover = () => board.roundOver();
+   
     const disableButtonsAndShowWinner = () => {
         gameGrids.forEach(gameGrid => gameGrid.removeEventListener('click', playTurn))
         player.classList.add("none");
